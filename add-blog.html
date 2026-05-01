@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/my-custom.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/select2.css">
+    <link rel="stylesheet" href="assets/css/ckeditor.css">
+    <style>
+        .ck-editor__editable {
+            height: 350px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-wrpper">
+        <nav class="fixed-top">
+            <header class="header d-flex justify-content-between py-1 ">
+
+
+                <div class="right-header d-flex align-items-center gap-3 ">
+                    <div class="logo d-none d-md-block">
+                        <a href="/"> ادارة المنصة التعليمية </a>
+                    </div>
+                    <div class="px-3">
+                        <a href="#"><i id="sidebar-toggle" class="fa-solid fa-chart-bar"></i></a>
+
+                    </div>
+                    <form action="" class="d-none d-md-block">
+                        <input type="text" class="form-control" placeholder="اكتب اسم المنتج للبحث">
+                    </form>
+                </div>
+
+
+                <div class="left-header d-flex align-items-center gap-3 px-3">
+                    <div class="icons d-flex gap-3">
+                        <a href=""><i class="fa-regular fa-comment"></i></a>
+
+
+
+                        <div class="messages-container position-relative" id="messages-container">
+                            <i class="fa-regular far fa-envelope position-relative envelope "></i>
+                            <ul class="messages-area position-absolute text-center" id="messages-area">
+                                <div class="messages-header">
+                                    <h3>احدث الرسائل</h3>
+                                </div>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex gap-3 item-menu-left">
+                                        <img src="assets/images/header/avatar.jpg" alt="">
+                                        <h4>احمد خالد</h4>
+                                    </div>
+                                    <a href=""><i class="fa-regular fa-comment"></i></a>
+
+                                </li>
+                                <a href="">كافة الرسائل</a>
+                            </ul>
+                        </div>
+
+                        <div class="messages-container-bell position-relative" id="messages-container-bell">
+                            <i class="fa-regular far fa-bell position-relative bell "></i>
+                            <ul class="messages-are-bell position-absolute text-center" id="messages-are-bell">
+                                <div class="messages-header-bell">
+                                    <h3>احدث الاشعارات</h3>
+                                </div>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex gap-3 item-menu-left">
+                                        <img src="assets/images/header/avatar.jpg" alt="">
+                                        <h4> لقد سجل طالب جديد</h4>
+                                    </div>
+                                    <a href=""><i class="fa-regular fa-comment"></i></a>
+
+                                </li>
+                                <a href="">كافة الاشعارات</a>
+                            </ul>
+                        </div>
+
+
+
+
+
+
+
+                        <a href=""><i class="fa-regular fa-comment"></i></a>
+                    </div>
+                    <div class="avatar">
+                        <img src="assets/images/header/avatar.jpg" alt="">
+                    </div>
+
+                    <a data-bs-toggle="offcanvas" href="#user-online"><i
+                            class="fa-regular fas fa-bars-staggered active-user"></i></a>
+
+                </div>
+
+
+            </header>
+        </nav>
+        <div id="sidebar" class="sidebar">
+            <div class="profile">
+                <img width="90" src="assets/images/header/avatar.jpg" alt="">
+                <h3>احمد رجب</h3>
+            </div>
+            <ul class="ul-sidebar">
+                <li class="mb-2 ">
+                    <i class="fa-solid fas fa-house-user fs-5 "></i>
+                    <a href="index.html" class="m-r-10">الصفحة الرئيسية</a>
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-user-graduate fs-5"></i>
+                    <a href="students.html" class="m-r-10">إدارة الطلاب</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fas fa-book-open fs-5"></i>
+                    <a href="" class="m-r-10">ادارة الدروس</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fas fa-file-alt fs-5"></i>
+                    <a href="" class="m-r-10">الاختبارات </a>
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-tasks fs-5"></i>
+                    <a href="" class="m-r-10"> المهام</a>
+                </li>
+
+                <li class="mb-2 active">
+                    <i class="fas fa-blog fs-5"></i>
+                    <a href="blog.html" class="m-r-10">المدونة </a>
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-chart-bar fs-5"></i>
+                    <a href="" class="m-r-10">الإحصائيات </a>
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-envelope fs-5"></i>
+                    <a href="" class="m-r-10">الرسائل </a>
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-cog fs-5"></i>
+                    <a href="" class="m-r-10">الإعدادات </a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="content p-4" id="content">
+            <div class="inner-content">
+                <div class="container-fluid">
+                    <h4>اضافة مقال جديد </h4>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card p-2">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="">اسم المقال</label>
+                                            <input type="text" placeholder="الرجاء ادخال اسم المقال"
+                                                class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">اسم اللطيف</label>
+                                            <input type="text" placeholder="الرجاء ادخال رابط المقال"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <label for="">التصنيف </label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected disabled>الرجاء ادخال التصنيف </option>
+                                                <option value="1">الاقتصادية</option>
+                                                <option value="2">السياسية</option>
+                                                <option value="3">العلمية</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">كلمة المفتاحية </label>
+                                            <select class="js-example-basic-multiple form-select" name="states[]"
+                                                multiple="multiple">
+                                                <option value="AL">Alabama</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AL">Alabama</option>
+
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">تحميل صورة المصغرة</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">تحميل صورة المقال</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <textarea name="" class="form-control" id="editor"></textarea>
+                                    </div>
+                                </form>
+                                <div class="modal-footer d-flex align-items-center justify-content-center gap-3 p-3">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">اغلاق</button>
+                                    <button type="button" class="btn btn-primary">اضافة مقال جديد</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- user online list -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="user-online" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">المستخدمين المتصلين</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+            <div class="alert alert-success">
+                كافة المستخدمين النشطين
+            </div>
+
+
+            <div class="item-side-menu mb-3">
+
+                <div class="avatar-info flex-itams-center gap-2">
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <img width="50" src="assets/images/students/student-9.jpg" alt="">
+                    <h4>سارة الخطيب </h4>
+                </div>
+
+                <div class="contact-info">
+                    <i class="fa-brands fab fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fab fa-facebook-messenger messenger-icon"></i>
+                </div>
+
+            </div>
+            <div class="item-side-menu mb-3">
+
+                <div class="avatar-info flex-itams-center gap-2">
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <img width="50" src="assets/images/students/student-2.jpg" alt="">
+                    <h4>يوسف الحسين </h4>
+                </div>
+
+                <div class="contact-info">
+                    <i class="fa-brands fab fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fab fa-facebook-messenger messenger-icon"></i>
+                </div>
+
+            </div>
+            <div class="item-side-menu mb-3">
+
+                <div class="avatar-info flex-itams-center gap-2">
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <img width="50" src="assets/images/students/student-5.jpg" alt="">
+                    <h4>رامي قاسم </h4>
+                </div>
+
+                <div class="contact-info">
+                    <i class="fa-brands fab fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fab fa-facebook-messenger messenger-icon"></i>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="assets/js/datatables.js"></script>
+    <script src="assets/js/apexcharts.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/select2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2({
+                tags: true, maximumSelectionLength: 5
+            });
+        });
+    </script>
+    <script type="importmap">
+    {
+        "imports": {
+            "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.3.1/ckeditor5.js",
+            "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.3.1/"
+        }
+    }
+
+</script>
+
+    <script type="module">
+        import {
+            ClassicEditor,
+            Essentials,
+            Bold,
+            Italic,
+            Underline,
+            Strikethrough,
+            Subscript,
+            Superscript,
+            Font,
+            Paragraph,
+            CodeBlock,
+            Link,
+            List,
+            Image,
+            ImageToolbar,
+            ImageCaption,
+            ImageStyle,
+            ImageResize,
+            Table,
+            TableToolbar,
+            MediaEmbed,
+            BlockQuote,
+            Alignment,
+            Highlight,
+            RemoveFormat,
+            Heading,
+            TodoList,
+            Indent,
+            IndentBlock
+        } from 'ckeditor5';
+
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                plugins: [
+                    Essentials, Bold, Italic, Underline, Strikethrough, Subscript, Superscript, Font, Paragraph, CodeBlock,
+                    Link, List, Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize, Table, TableToolbar,
+                    MediaEmbed, BlockQuote, Alignment, Highlight, RemoveFormat, Heading, TodoList, Indent, IndentBlock
+                ],
+                toolbar: {
+                    items: [
+                        'undo', 'redo',
+                        '|',
+                        'heading',
+                        '|',
+                        'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+                        '|',
+                        'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'code',
+                        '|',
+                        'link', 'uploadImage', 'blockQuote', 'codeBlock',
+                        '|',
+                        'alignment',
+                        '|',
+                        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent',
+                        '|',
+                        'insertTable', 'mediaEmbed',
+                        '|',
+                        'highlight', 'removeFormat'
+                    ],
+                    shouldNotGroupWhenFull: true
+                },
+                image: {
+                    toolbar: [
+                        'imageTextAlternative', 'toggleImageCaption', 'imageStyle:inline', 'imageStyle:block', 'imageStyle:side', 'linkImage'
+                    ]
+                },
+                table: {
+                    contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+                },
+                language: {
+                    lnguage: 'ar',
+                    languageDirection: 'rtl'
+                }
+            })
+            .then(editor => {
+                console.log('Editor was initialized', editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>
+
+</html>

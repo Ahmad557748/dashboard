@@ -1,0 +1,619 @@
+ :root {
+  /* أزرق أساسي للهوية */
+  --primary-blue: #0d6efd; /* أزرق بوتستراب القياسي */
+  --dark-blue-bg: #1e293b; /* أزرق داكن جداً للخلفيات (مثل القائمة الجانبية) */
+  --light-blue-bg: #f0f9ff; /* أزرق فاتح جداً لخلفية الصفحة الأساسية */
+  
+  /* تدرجات للكروت الأربعة - تبدأ من الأغمق (اليمين) إلى الأفتح (اليسار) */
+  --grad-1-start: #004e92; --grad-1-end: #000428; /* كرت إجمالي الطلاب - داكن وفخم */
+  --grad-2-start: #2193b0; --grad-2-end: #6dd5ed; /* كرت المهام - أزرق سماوي حيوي */
+  --grad-3-start: #3a7bd5; --grad-3-end: #00d2ff; /* كرت الدروس - أزرق متوسط مشرق */
+  --grad-4-start: #4facfe; --grad-4-end: #00f2fe; /* كرت الاختبارات - فاتح ومنعش */
+
+  /* ألوان النصوص والحدود */
+  --text-on-dark: #f8fafc;
+  --text-on-light: #1e293b;
+  --border-color: #e2e8f0;
+}
+html {
+    font-size: 16px;
+
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: calc(14px + 0.3vw);
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13px !important;
+    }
+}
+
+/* هذا سيجبر كل الروابط والنصوص في المشروع على اتباع حجم الـ html الذي حددناه فوق */
+body, a, span, p, .nav-link  {
+    font-size: 18px !important; 
+}
+
+
+body {
+    font-family: cairo;
+      background-color: var(--light-blue-bg);
+
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+/* start header  */
+.header {
+        background-color: #f8fbff !important; 
+    /* خط نحيف تحت الناف بار بلون الكرت الأغمق */
+   
+    box-shadow: 3px 3px 3px #cccccc9c;
+}
+
+/* start header right */
+.logo {
+    text-align: center;
+    width: 250px;
+    border-left: 3px solid #ccc;
+}
+
+.logo a {
+    font-size: 20px;
+        color: #001529 !important;
+    font-weight: bold;
+
+}
+
+.bell::after {
+    position: absolute;
+    content: "6";
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.envelope::after {
+    position: absolute;
+    content: "4";
+    background-color: green;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* end header right */
+
+/* start header left */
+.icons i,
+.active-user,
+#sidebar-toggle {
+    font-size: 25px;
+    color: rgb(19, 19, 19);
+}
+
+.icons i {
+    transition: 0.3s;
+}
+
+.icons i:hover {
+    scale: 1.1;
+}
+
+.messages-container {
+    cursor: pointer;
+}
+
+.messages-container-bell {
+    cursor: pointer;
+}
+
+.messages-area {
+    background-color: white;
+    width: 300px;
+    top: 40px;
+    left: -10px;
+    border-radius: 10px;
+    /* padding: 10px; */
+    border-bottom: 1px solid blue;
+    /* overflow: hidden; */
+    display: none;
+
+}
+
+.messages-area li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.messages-area li:hover {
+    background-color: #eee;
+}
+
+.messages-are-bell {
+    background-color: white;
+    width: 300px;
+    top: 40px;
+    left: -70px;
+    border-radius: 10px;
+    /* padding: 10px; */
+    border-bottom: 1px solid blue;
+    /* overflow: hidden; */
+    display: none;
+
+}
+
+.messages-are-bell li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.messages-are-bell li:hover {
+    background-color: #eee;
+}
+
+.messages-header {
+    width: 100%;
+    background-color: rgba(28, 161, 28, 0.678);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.messages-header::after {
+    position: absolute;
+    content: "";
+    /* width: 15px;
+    height: 15px;
+    background-color: green; */
+    top: -28px;
+    left: 8px;
+    border: 15px solid;
+    border-color: transparent transparent rgba(28, 161, 28, 0.678) transparent;
+}
+
+.messages-header-bell {
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.678);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.messages-header-bell::after {
+    position: absolute;
+    content: "";
+    /* width: 15px;
+    height: 15px;
+    background-color: green; */
+    top: -28px;
+    left: 65px;
+    border: 15px solid;
+    border-color: transparent transparent rgba(255, 0, 0, 0.678) transparent;
+}
+
+.messages-header h3 {
+    color: white;
+    font-size: 22px;
+}
+
+.messages-header-bell h3 {
+    color: white;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    .messages-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .messages-area {
+        background-color: white;
+        width: 250px;
+        height: auto;
+        transform: translateX(0);
+        position: relative;
+        right: -100px;
+    }
+
+    .messages-header::after {
+        position: relative;
+        right: -70px;
+        top: -40px;
+    }
+
+}
+
+
+
+.item-menu-left {
+    align-items: center;
+}
+
+.item-menu-left img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+.item-menu-left h4 {
+    font-size: 18px;
+}
+
+.avatar img {
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #d1d1d1;
+}
+
+
+/* end header left */
+
+.sidebar {
+    width: 250px;
+    background-color: var(--dark-blue-bg) !important;
+  color: var(--text-on-dark) !important;
+  border-left: 1px solid rgba(255,255,255,0.1); /* حد شفاف على اليمين */
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    transition: 0.3s;
+    overflow-y: scroll;
+    z-index: 100000;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: 1 solid #ccc;
+    padding: 2px;
+}
+
+.profile h3 {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.ul-sidebar li a  {
+ color: rgba(255,255,255,0.7) !important;
+  transition: all 0.3s ease;
+}
+
+
+.ul-sidebar {
+    margin: 0 10px;
+}
+
+.ul-sidebar li {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.active {
+      color: #ffffff !important;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.ul-sidebar li:hover {
+    cursor: pointer;
+    background-color: #888888;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.ul-sidebar li i{
+     color: var(--primary-blue) !important; /* الأيقونات بلون الهوية الأساسي */
+    font-size: 20px;
+}
+
+#sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background: #00509d;
+    border-radius: 10px;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background: #cacaca;
+    border-radius: 10px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+
+    height: calc(100vh - 45px);
+    margin-right: 250px;
+    margin-top: 45px;
+    transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        width: 250px;
+        right: -250px;
+    }
+
+    .content {
+        margin-right: 0;
+    }
+}
+
+.stat-1 {
+    /* background-image: linear-gradient(90deg , rgb(248, 44, 44) ,rgb(253, 106, 106)); */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.stat-1:hover {
+    scale: 1.03;
+}
+
+.stat-green {
+    background-image: linear-gradient(135deg, #001529 0%, #003366 100%);
+    color: white !important;
+    transition: 0.3s;
+}
+
+/* 2. الكرت الثاني (المهام) - أزرق متوسط */
+.stat-red {
+    background-image: linear-gradient(135deg, #003366 0%, #00509d 100%);
+    color: white !important;
+    transition: 0.3s;
+}
+
+/* 3. الكرت الثالث (الدروس) - أزرق فاتح */
+.stat-blue {
+    background-image: linear-gradient(135deg, #00509d 0%, #0077b6 100%);
+    color: white !important;
+    transition: 0.3s;
+}
+
+/* 4. الكرت الرابع (الاختبارات) - الأفتح */
+.stat-yellow {
+    background-image: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+    color: white !important;
+    transition: 0.3s;
+}
+
+
+
+.stat-1 h3 {
+    color: white;
+    font-family: Almarai;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.stat-1 h4 {
+    color: white;
+    font-family: Almarai;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#chart-timeline,
+#chart {
+    width: 100%;
+    height: 600px;
+}
+
+@media (max-width: 767px) {
+
+    #chart-timeline,
+    #chart {
+        height: 300px;
+
+    }
+}
+
+.text-charts {
+    font-family: Almarai;
+    font-size: 15x;
+    font-weight: bold;
+}
+
+
+/* end header */
+
+
+
+/* user online list */
+.item-side-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 10px;
+    border-bottom: 3px solid #00b2ff;
+}
+
+.avatar-info img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+}
+
+.avatar-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-info {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-info i {
+    font-size: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contact-info i:hover {
+    transform: scale(1.2);
+}
+
+.whatsapp-icon {
+    color: #43e97b;
+
+}
+
+.messenger-icon {
+    color: #00b2ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-primary {
+    background-color: #00509d !important; /* درجة أزرق متوسطة متناسقة مع الكروت */
+    border: none !important;
+    padding: 8px 20px !important;
+    border-radius: 8px !important;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #003366 !important; /* يغمق عند التحويم */
+    transform: translateY(-2px);
+}
+
+/* زر الإغلاق أو الإلغاء */
+.btn-danger {
+    background-color: #64748b !important; /* لون رمادي مزرق احترافي وهادئ */
+    border: none !important;
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 8px !important;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #475569 !important; /* درجة أغمق عند التحويم */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.btn-table-blue {
+    background-color: #1e3c72 !important; /* لون كحلي ملكي */
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+    font-size: 14px !important;
+    font-family: 'Cairo', sans-serif !important;
+    transition: 0.3s !important;
+    
+}
+
+.btn-table-blue:hover {
+    background-color: #2a5298 !important; /* يفتح قليلاً عند التحويم */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.dt-buttons {
+    display: flex !important;
+    gap: 12px !important; /* المسافة بين الأزرار */
+    margin-bottom: 20px !important;
+}
