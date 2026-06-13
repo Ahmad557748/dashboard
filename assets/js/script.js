@@ -83,17 +83,18 @@ messagescontainerbell.addEventListener("click", function () {
 
 
 
-//new DataTable('#example');
-new DataTable('#example', {
-    responsive: true,
-    layout: {
-        topStart: {
-            buttons: [
-                { extend: 'copy', text: 'نسخ', className: 'btn-table-blue' },
-                { extend: 'excel', text: 'تصدير للأكسل', className: 'btn-table-blue' },
-                { extend: 'pdf', text: 'تصدير كملف', className: 'btn-table-blue' },
-                { extend: 'print', text: 'طباعة', className: 'btn-table-blue' }
-            ]
-        }
-    }
-});
+// //new DataTable('#example');
+// new DataTable('#example', {
+//     responsive: true,
+//     layout: {
+//         topStart: {
+//             buttons: [
+//                 { extend: 'copy', text: 'نسخ', className: 'btn-table-blue' },
+//                 { extend: 'excel', text: 'تصدير للأكسل', className: 'btn-table-blue' },
+//                 { extend: 'pdf', text: 'تصدير كملف', className: 'btn-table-blue' },
+//                 { extend: 'print', text: 'طباعة', className: 'btn-table-blue' }
+//             ]
+//         }
+//     }
+// });
+
